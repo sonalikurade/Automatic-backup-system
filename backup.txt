@@ -1,0 +1,11 @@
+backup.sh
+
+#!/bin/bash
+sudo /usr/bin/rsync -avz -e "ssh -i /home/ec2-user/sonali-linux-key.pem" /sbackup/* ec2-user@18.212.204.53:/backdes
+
+sudo rsync -avz -e "ssh -i /home/ec2-user/sonali-linux-key.pem" /home/ec2-user/src_dir/* ec2-user@e
+c2-54-167-114-62.compute-1.amazonaws.com:/home/ec2-user/dest_dir
+
+crontab
+
+* * * * * usr/bin/bash /root/backup.sh
